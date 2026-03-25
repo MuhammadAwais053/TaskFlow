@@ -1,97 +1,86 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# TaskFlow
 
-# Getting Started
+A clean, production-level task management mobile application built with React Native CLI.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+- Onboarding flow shown only once using AsyncStorage
+- Home dashboard with live task stats (Total, Done, Pending)
+- Full CRUD — Create, Read, Update, Delete tasks
+- Task fields: Title, Description, Due Date
+- Instant push notification on task creation
+- Scheduled reminder notification one day before due date
+- Local data persistence with AsyncStorage
+- Bottom tab navigation (Home & Tasks)
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Tech Stack
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+| Technology | Purpose |
+|---|---|
+| React Native CLI | Core framework |
+| React Navigation (Stack + Bottom Tabs) | Navigation |
+| AsyncStorage | Local data persistence |
+| Notifee | Push & scheduled notifications |
+| React Native DateTimePicker | Due date selection |
+| React Native Gesture Handler | Navigation gestures |
 
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+## Project Structure
+```
+TaskFlow/
+├── src/
+│   ├── screens/
+│   │   ├── SplashScreen.jsx
+│   │   ├── OnboardingScreen.jsx
+│   │   ├── HomeScreen.jsx
+│   │   ├── TaskScreen.jsx
+│   │   └── AddEditTaskScreen.jsx
+│   ├── components/
+│   │   ├── TaskCard.jsx
+│   │   └── StatsCard.jsx
+│   ├── navigation/
+│   │   ├── AppNavigator.jsx
+│   │   └── BottomTabNavigator.jsx
+│   └── utils/
+│       ├── storage.js
+│       └── notifications.js
+├── assets/
+│   └── images/
+├── App.jsx
 ```
 
-## Step 2: Build and run your app
+## Getting Started
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Prerequisites
 
-### Android
+- Node.js >= 18
+- React Native CLI
+- Android Studio / Xcode
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+### Installation
+```bash
+git clone https://github.com/MuhammadAwais053/TaskFlow.git
+cd TaskFlow
+npm install
+cd ios && pod install && cd ..
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+### Run on Android
+```bash
+npx react-native run-android
 ```
 
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
+### Run on iOS
+```bash
+npx react-native run-ios
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## Concepts Covered
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- Stack & Bottom Tab Navigation
+- useState for local state management
+- Props drilling pattern
+- AsyncStorage for persistence
+- FlatList for performant list rendering
+- CRUD operations
+- Local push & scheduled notifications
+- Component-based architecture
